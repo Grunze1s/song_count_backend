@@ -1,0 +1,29 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Songs{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <table> 
+    <tr>
+        <td>Song Id</td>
+        <td>Song Name</td>
+        <td>Count</td>
+    </tr>
+    {% for song in songs %}
+        <tr>
+            <td>{{ song.song_id }}</td>
+            <td>{{ song.song_name }}</td>
+            <td>{{ song.count }}</td>
+        </tr>
+    {% endfor %}
+  </table>
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a> |
+  <a href="{% url 'signup' %}">signup</a>
+{% endif %}
+{% endblock %}
