@@ -8,13 +8,13 @@
   Hi {{ user.username }}!
   <table> 
     <tr>
-        <td>Song Id</td>
-        <td>Song Name</td>
+        <td>Radio Name</td>
+        <td>Ad Name</td>
         <td>Count</td>
     </tr>
-    {% for song in songs %}
+    {% for song in radio_count %}
         <tr>
-            <td>{{ song.song_id }}</td>
+            <td>{{ song.radio_name }}</td>
             <td>{{ song.song_name }}</td>
             <td>{{ song.count }}</td>
         </tr>

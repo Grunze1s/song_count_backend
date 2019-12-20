@@ -84,7 +84,7 @@ DATABASES = {
     'songdb': {
         'ENGINE': 'django.db.backends.mysql',
         'HOST':'localhost',
-        'NAME': 'dejavu',
+        'NAME': 'ad1',
         'PASSWORD': 'shrestha',
         'USER': 'sushil'
     }
