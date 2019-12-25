@@ -27,7 +27,9 @@ class RadioCount(models.Model):
     radio_song_id = models.IntegerField(primary_key=True)
     radio_name = models.CharField(max_length=250)
     song_name = models.CharField(max_length=250)
-    count = models.IntegerField()
+    company = models.CharField(max_length=250)
+    confidence = models.IntegerField()
+    listened_datetime = models.DateTimeField()
     class Meta:
         ordering = ['radio_name','song_name']
         db_table="radio_counts"

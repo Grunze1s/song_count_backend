@@ -1,22 +1,30 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 
-{% block title %}Songs{% endblock %}
+{% block title %}Ads count{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
   <table> 
     <tr>
-        <td>Radio Name</td>
-        <td>Ad Name</td>
-        <td>Count</td>
+        <td>Date</td>
+        <td>Time</td>
+        <td>Content_id</td>
+        <td>Content Name</td>
+        <td>Company/Advertiser</td>
+        <td>Media Name</td>
+        <td>Confidence</td>
     </tr>
     {% for song in radio_count %}
         <tr>
+            <td>{{ song.listened_datetime|date:"D d M Y" }}</td>
+            <td>{{ song.listened_datetime|date:"h:i:s A" }}</td>
+            <td>{{ song.radio_song_id }}</td>
             <td>{{ song.radio_name }}</td>
-            <td>{{ song.song_name }}</td>
-            <td>{{ song.count }}</td>
+            <td>{{ song.company }}</td>
+            <td>{{ song.radio_name }}</td>
+            <td>{{ song.confidence }}</td>
         </tr>
     {% endfor %}
   </table>
