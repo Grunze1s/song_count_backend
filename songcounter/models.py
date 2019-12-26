@@ -31,7 +31,7 @@ class RadioCount(models.Model):
     confidence = models.IntegerField()
     listened_datetime = models.DateTimeField()
     class Meta:
-        ordering = ['radio_name','song_name']
+        ordering = ['listened_datetime']
         db_table="radio_counts"
     
     def __str__(self):
