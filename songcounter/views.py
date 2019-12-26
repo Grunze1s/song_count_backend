@@ -8,7 +8,6 @@ def songs(request):
     radio_count = RadioCount.objects.all()
     context = {
         'songs':data,
-        # 'radio': radio,
         'radio_count':radio_count
     }
     return render(request,'displaysongs.html',context=context)
